@@ -6,6 +6,7 @@ module com.example.ryanproject5 {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires javafx.graphics;
+    requires java.net.http;
 
     opens com.example.ryanproject5 to javafx.fxml;
     exports com.example.ryanproject5;

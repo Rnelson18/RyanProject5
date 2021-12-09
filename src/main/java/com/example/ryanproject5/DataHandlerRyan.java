@@ -6,7 +6,7 @@ private HttpClient grabData;
 private String locationWeb;
         String[]category;
 
-public DateHandlerRyan(String siteToSearch) {
+public DataHandlerRyan(String siteToSearch) {
         grabData = HttpClient.newHttpClient();
         locationWeb = siteToSearch;
         category = new String[]{"animal", "career", "celebrity", "dev", "explicit", "fashion", "food", "history",

@@ -32,7 +32,7 @@ public class RyanController implements Initializable {
         var param = ButtonPressed.getText();
         var wholeSite = site + param;
         Model = new DateHandlerRyan(wholeSite);
-        var joke = Model.getData ();
+        var joke = Model.getData();
         ObservableList<DateHandlerRyan.ChuckNorrisJoke> JokeList =
                 FXCollections.observableArrayList((DateHandlerRyan.ChuckNorrisJoke) joke);
         ListControl.setItems(JokeList);

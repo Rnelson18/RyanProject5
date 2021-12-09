@@ -1,12 +1,21 @@
 package com.example.ryanproject5;
 
-import java.util.ArrayList;{
+import com.google.gson.Gson;
 
-private HttpClient grabData;
-private String locationWeb;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.ArrayList;
+
+public class DataHandlerRyan {
+
+    private HttpClient grabData;
+    private String locationWeb;
         String[]category;
 
-public DataHandlerRyan(String siteToSearch) {
+    public DataHandlerRyan(String siteToSearch) {
         grabData = HttpClient.newHttpClient();
         locationWeb = siteToSearch;
         category = new String[]{"animal", "career", "celebrity", "dev", "explicit", "fashion", "food", "history",

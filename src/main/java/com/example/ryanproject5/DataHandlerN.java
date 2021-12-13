@@ -13,11 +13,15 @@ public class DataHandlerN {
     private HttpClient dataGrabber;
     private String webLocation;
 
-    public DataHandler(String sitToSearch){
+    public DataHandlerN(String wholeSite) {
+    }
+
+
+    public void DataHandler(String siteToSearch){
         dataGrabber = HttpClient.newHttpClient();
         webLocation = siteToSearch;
     }
-    public WebDataType[] getData(){
+    public StarWarsAPI getData(){
         var requestBuilder = HttpRequest.newBuilder();
         var ourURI = URI.create(webLocation);
         var dataRequest = requestBuilder.uri(ourURI).build();
@@ -36,9 +40,21 @@ public class DataHandlerN {
         }
         var responseBody = response.body();
         var jsonParser = new Gson();
-        var WebData = jsonParser.fromJson(responseBody, WebDataType[].class);
-        return WebData;
+        var StarData = jsonParser.fromJson(responseBody, StarWarsAPI.class);
+        return StarData;
         }
+
+    class StarWarsAPI{
+    String name;
+    String height;
+    String year;
+    String planet;
+    String movie;
+    @Override
+        public String toString(){
+        return name;
     }
+
+}
 }
 

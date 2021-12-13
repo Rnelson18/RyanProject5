@@ -24,10 +24,10 @@ public class HelloController {
             System.out.println("Couldn't load second window");
             e.printStackTrace();
         }
-        Stage secondWindow = new Stage();
-        secondWindow.setScene(secondScene);
-        secondWindow.setTitle("See  - here is a second window");
-        secondWindow.show();
+        Stage Nick = new Stage();
+        Nick.setScene(secondScene);
+        Nick.setTitle("See  - here is a second window");
+        Nick.show();
     }
 
     @FXML

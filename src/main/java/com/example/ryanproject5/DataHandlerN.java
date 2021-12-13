@@ -13,6 +13,10 @@ public class DataHandlerN {
     private HttpClient dataGrabber;
     private String webLocation;
 
+    public DataHandlerN(String wholeSite) {
+    }
+
+
     public void DataHandler(String siteToSearch){
         dataGrabber = HttpClient.newHttpClient();
         webLocation = siteToSearch;
@@ -40,7 +44,6 @@ public class DataHandlerN {
         return StarData;
         }
 
-}
     class StarWarsAPI{
     String name;
     String height;
@@ -52,5 +55,6 @@ public class DataHandlerN {
         return name;
     }
 
+}
 }
 

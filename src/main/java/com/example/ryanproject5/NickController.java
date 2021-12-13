@@ -19,25 +19,25 @@ public class NickController {
         @FXML
         private TextField NameField;
         @FXML
-        private TextField height;
+        private TextField HeightField;
         @FXML
-        private TextField year;
+        private TextField YearField;
         @FXML
-        private TextField planet;
+        private TextField PlanetField;
         @FXML
-        private TextField movie;
+        private TextField MovieField;
         @FXML
         private ListView<DataHandlerN.StarWarsAPI> ListControl;
-        private DataHandlerN Model;
+        private DataHandlerN ModelN;
 
         public void loadData(){
             var site = "https://swapi.dev/api/";
             String param = getQueryParam();
             var wholeSite = site+param;
-            Model = new DataHandlerN(wholeSite);
-            var universities = Model.getData();
-            ObservableList<DataHandlerN.StarWarsAPI> UnivList =
-                    FXCollections.observableArrayList(DataHandlerN.StarWarsAPI);
+            ModelN = new DataHandlerN(wholeSite);
+            var characters = ModelN.getData();
+            ObservableList<DataHandlerN.StarWarsAPI> CharList =
+                    FXCollections.observableArrayList(characters);
             ListControl.setItems(CharList);
         }
 
@@ -61,12 +61,14 @@ public class NickController {
             ListControl.getSelectionModel().selectedItemProperty().addListener(
                     new ChangeListener<DataHandlerN.StarWarsAPI>() {
                         @Override
-                        public void changed(ObservableValue<? extends DataHandlerN.StarWarsAPI> observableValue, DataHandlerN.StarWarsAPI universityDataType, DataHandlerN.WebDataType t1) {
+                        public void changed(ObservableValue<? extends DataHandlerN.StarWarsAPI> observableValue, DataHandlerN.StarWarsAPI starDataType, DataHandlerN.StarWarsAPI t1) {
                             NameField.setText(t1.name);
-                            UniversityCountryField.setText(t1.country);
-                            websiteDisplayField.setText(t1.web_pages.toString());
+                            HeightField.setText(t1.height);
+                            YearField.setText(t1.year);
+                            PlanetField.setText(t1.planet);
+                            MovieField.setText(t1.movie);
                         }
-                    }
+                    });
         }
     }
 }

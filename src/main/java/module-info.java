@@ -7,9 +7,8 @@ module com.example.ryanproject5 {
     requires org.kordamp.bootstrapfx.core;
     requires javafx.graphics;
     requires java.net.http;
-    requires javafx.base;
     requires com.google.gson;
 
-    opens com.example.ryanproject5 to javafx.fxml, com.google.gson;
+    opens com.example.ryanproject5 to javafx.fxml;
     exports com.example.ryanproject5;
 }
